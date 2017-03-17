@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!-- TUSONIC -->
+    <name>Name</name>
+    <events>
+        <variable constant="0" name="Name" sid="810466548116641" static="0" type="text"></variable>
+        <event-block sid="844421968231574">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="906476131270795" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set CSS style" sid="435319655985748" type="TextBox">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;250%&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="740134064587867" type="TextBox">
+                    <param id="0" name="Property name">&quot;text-align&quot;</param>
+                    <param id="1" name="Value">&quot;center&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="781875524236778" type="TextBox">
+                    <param id="0" name="Property name">&quot;background-color&quot;</param>
+                    <param id="1" name="Value">&quot;lightblue&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="517897165745193" type="TextBox">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;6px solid black&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="524365678353654" type="TextBox">
+                    <param id="0" name="Property name">&quot;border-radius&quot;</param>
+                    <param id="1" name="Value">&quot;20px&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="590269665303416" type="TextBox">
+                    <param id="0" name="Text">Name</param>
+                </action>
+                <action id="0" name="Set text" sid="692682632394784" type="FontNameSave">
+                    <param id="0" name="Text">Name</param>
+                </action>
+                <action id="5" name="Check item exists" sid="190933682064750" type="LocalStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="198199112016176">
+            <conditions>
+                <condition id="3" name="On touched object" sid="416799375881846" type="Touch">
+                    <param id="0" name="Object">Ok</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="521074622283025" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="633389884459134" type="System">
+                    <param id="0" name="Variable">Name</param>
+                    <param id="1" name="Value">TextBox.Text</param>
+                </action>
+                <action id="0" name="Set item" sid="834132651901294" type="LocalStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                    <param id="1" name="Value">Name</param>
+                </action>
+                <action id="-16" name="Wait" sid="383436892474590" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="924112317231566" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="108060625085752">
+            <conditions>
+                <condition id="3" name="On touched object" sid="105493009488937" type="Touch">
+                    <param id="0" name="Object">Retry</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="535680492024431" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="355624262815527" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="268803232842379" title="Name" />
+        <event-block sid="681791054405293">
+            <conditions>
+                <condition id="1" name="On text changed" sid="199295363727109" type="TextBox" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="806281330623359" type="FontNameSave">
+                    <param id="0" name="Text">TextBox.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="850944231437162">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="846827583534487" type="System">
+                    <param id="0" name="First value">len(TextBox.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="754304346731512" type="TextBox">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="517296983433047" type="FontNameSave">
+                    <param id="0" name="Text">TextBox.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="339432730266614">
+            <conditions>
+                <condition id="9" name="On item exists" sid="735377548897836" type="LocalStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="108258907465245" type="LocalStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="942808276193487">
+            <conditions>
+                <condition id="1" name="On item get" sid="863429313517953" type="LocalStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="171027290361229" type="FontNameSave">
+                    <param id="0" name="Text">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="238868937790063" type="TextBox">
+                    <param id="0" name="Text">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

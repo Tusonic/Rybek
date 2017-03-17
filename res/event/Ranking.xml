@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!-- TUSONIC -->
+    <name>Ranking</name>
+    <events>
+        <event-block sid="603696642731095">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="352507445056146" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="570949400977176" type="ScoreLocalRanking">
+                    <param id="0" name="Text">RankingLocalScore</param>
+                </action>
+                <action id="0" name="Request URL" sid="407191486120289" type="AJAX">
+                    <param id="0" name="Tag">&quot;GET&quot;</param>
+                    <param id="1" name="URL">&quot;https://www.gry.rybnik.pl/load.php&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="246757578614190">
+            <conditions>
+                <condition id="9" name="On item exists" sid="212486440027519" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HiScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="234677283943006" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HiScore&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="695125906401767">
+            <conditions>
+                <condition id="1" name="On item get" sid="983622913581195" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HiScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="412956676714456" type="System">
+                    <param id="0" name="Variable">RankingLocalScore</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="997379276731382">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="798926288039475" type="Touch">
+                    <param id="0" name="Object">Retry</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="284660386576190" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="256894158996864" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="736441159753686" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="324032705742161">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="835901475200015" type="Touch">
+                    <param id="0" name="Object">top10m</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="242820026336411" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="702037985442520" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="688846836990572" type="System">
+                    <param id="0" name="Layout">RankingTop</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="471097844144068">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="954629767191025" type="Touch">
+                    <param id="0" name="Object">Setting</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="144872761792174" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="461358266442517" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="203503077271996" type="System">
+                    <param id="0" name="Layout">Name</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="954200345346664">
+            <conditions>
+                <condition id="0" name="On completed" sid="908743449848257" type="AJAX">
+                    <param id="0" name="Tag">&quot;GET&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="971992106361687" type="System">
+                    <param id="0" name="Group name">&quot;Do Array&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="753897219047171" title="Do Array">
+            <sub-events>
+                <event-block sid="605446023725263">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="892163386062187" type="Array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="608647460070771" type="Array">
+                            <param id="0" name="X">Array.CurX</param>
+                            <param id="1" name="Value">tokenat(Ajax.LastData, Array.CurX, &quot;|&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="621771725771650">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="579483840180608" type="System">
+                            <param id="0" name="Object">score1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="184166455773567" type="score1">
+                            <param id="0" name="Text">Array.At(score1.IID)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

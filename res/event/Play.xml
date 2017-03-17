@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!-- TUSONIC -->
+    <name>Play</name>
+    <events>
+        <variable constant="0" name="Score" sid="927906395166334" static="0" type="number">0</variable>
+        <variable constant="0" name="Live" sid="522880377459721" static="0" type="number">3</variable>
+        <variable constant="0" name="Speed" sid="536537093687860" static="0" type="number">120</variable>
+        <event-block sid="751451138991773">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="915552971062987" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="829865865728054" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="494691871654646" type="System">
+                    <param id="0" name="Variable">Live</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="138316117273881" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="466772498299478" type="System">
+                    <param id="0" name="Variable">Speed</param>
+                    <param id="1" name="Value">120</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="224165676057237" type="BackgroundPlay">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="479144581616617" type="Shark">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="586768979808800" type="Live0">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="5" name="Check item exists" sid="405523840029757" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HiScore&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="129474088227518" type="LocalStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="721651321641170">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="410236861262683" type="BackgroundPlay">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-2000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="480293791684237" type="BackgroundPlay">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="427837399385306">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="408943489564104" type="System">
+                    <param id="0" name="Variable">Live</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="9" name="Stop stepping" sid="279229280229022" type="Player">
+                    <param id="0" name="Position">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="676262459774318" type="System">
+                    <param id="0" name="Layout">GameOver</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="336510175457453" title="Animated">
+            <sub-events>
+                <event-block sid="173302289929231">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="257564267739385" type="Live0">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="129062396626528" type="Live0">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="573367198223664" type="Live0">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="290416498808816">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="515095812496626" type="Shark">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="627188325703672" type="Shark">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="235155963641226" type="Shark">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="571492110172917">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="850964093390667" type="Player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="934960372024019" type="Player">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="337342680597143" type="Player">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="278987517685402">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="633391513512068" type="Sprite">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="284515283750884" type="Sprite" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="805204383920644" title="Control">
+            <sub-events>
+                <event-block sid="526746139092600">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="390773219159040" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="266663270706260" type="Audio">
+                            <param id="0" name="Audio file">shark</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="395135374073761" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="557996709500635" type="Player">
+                            <param id="0" name="X">160</param>
+                            <param id="1" name="Y">320</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="542693316689393" type="Player">
+                            <param id="0" name="Which">2</param>
+                            <param id="1" name="Speed">-350</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="115798846036350" type="System">
+                            <param id="0" name="Object to create">Sprite</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="X">160</param>
+                            <param id="3" name="Y">320</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="169745354844826" type="Sprite">
+                            <param id="0" name="Speed">20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="569347499523585">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is in touch" sid="386376351881479" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="3" name="Accelerate" sid="131216273552689" type="Player">
+                            <param id="0" name="Which">2</param>
+                            <param id="1" name="Acceleration">600</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="492488495573165">
+                    <conditions>
+                        <condition id="2" name="Is in touch" sid="124998564089471" type="Touch" />
+                        <condition id="2" name="Key is down" sid="295297394381832" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="102570699172885" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="116054826795904" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="3" name="Accelerate" sid="700648991858428" type="Player">
+                            <param id="0" name="Which">2</param>
+                            <param id="1" name="Acceleration">-600</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="586585545183594">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="381618218476413" type="Touch">
+                            <param id="0" name="Object">Coursor</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="3" name="Accelerate" sid="637911218576682" type="Player">
+                            <param id="0" name="Which">2</param>
+                            <param id="1" name="Acceleration">-600</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="549470223034023" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="454098710338785" type="Coursor" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="363198503643354" title="Spawn">
+            <sub-events>
+                <event-block sid="946175345546404">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="733066958566174" type="System">
+                            <param id="0" name="Interval (seconds)">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="988922159983839" type="System">
+                            <param id="0" name="Object to create">Shark</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="X">1500</param>
+                            <param id="3" name="Y">random(-80,800)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="757663318266600">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="174513115665315" type="System">
+                            <param id="0" name="Interval (seconds)">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="994236519667985" type="System">
+                            <param id="0" name="Object to create">Shark</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="X">1500</param>
+                            <param id="3" name="Y">random(-80,800)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="753301696774017">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="335800846542543" type="System">
+                            <param id="0" name="Interval (seconds)">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="580360707389443" type="System">
+                            <param id="0" name="Object to create">Live0</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="X">1500</param>
+                            <param id="3" name="Y">random(200,600)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="304921164757839">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="283251431325150" type="Shark">
+                            <param id="0" name="Object">Spawn</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="871875944498990" type="System">
+                            <param id="0" name="Variable">Speed</param>
+                            <param id="1" name="Value">22</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="849057131065907" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="490274709258108" type="FontGame">
+                            <param id="0" name="Text">Score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="821648342012253">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="750238912115448" type="Shark">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="158802960211647" type="Audio">
+                            <param id="0" name="Audio file">shark</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="924260462251387" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="255792769528392" type="System">
+                            <param id="0" name="Object to create">Sprite</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="X">Shark.X</param>
+                            <param id="3" name="Y">Shark.Y</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="261263206432862" type="Sprite">
+                            <param id="0" name="Speed">20</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="144755197997356" type="Shark" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="837938891037446" title="Live">
+            <sub-events>
+                <event-block sid="672616545780162">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="978982343446043" type="Live0">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="967999984754444" type="Audio">
+                            <param id="0" name="Audio file">liveup</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="780167747567584" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="730364580914522" type="Live0" />
+                    </actions>
+                </event-block>
+                <event-block sid="845994793503622">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="449519810913986" type="Live0">
+                            <param id="0" name="Object">Spawn</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="128827903415005" type="Live0" />
+                    </actions>
+                </event-block>
+                <event-block sid="324246015088399">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="431529601392413" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="148294687423461" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="104822606464301" type="Live2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="767705584598061" type="Live3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="208270233326885" type="Live4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="591193925957320" type="Live5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="432794224367800" type="Live6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="854705057348748" type="Live7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="715005224651585">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="631118706190974" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="221518435723182" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="761463792921622" type="Live2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="455056112891276" type="Live3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="976323834907354" type="Live4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="235602353477307" type="Live5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="379469298324014" type="Live6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="716615702324367" type="Live7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="104245597189646">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="802772807635377" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="183934616632914" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="827948282921697" type="Live2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="364322159794653" type="Live3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="565770342603674" type="Live4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="549563782098072" type="Live5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="268764665516519" type="Live6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="643889128205623" type="Live7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="166763758663175">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="312251391419730" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="782250898291488" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="546964071435722" type="Live2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="300763556431358" type="Live3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="704635534248079" type="Live4">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="629240316867676" type="Live5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="796498444036967" type="Live6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="934512084296121" type="Live7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="778472755551707">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="339671385600794" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="777908291106375" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="792193819199274" type="Live2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="212658665795477" type="Live3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="670494382437529" type="Live4">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="130888651800621" type="Live5">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="804942210797560" type="Live6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="700624923581162" type="Live7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="258188104528813">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="998263805214187" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="822528261935906" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="180152423061094" type="Live2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="900403626045583" type="Live3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="662041474700263" type="Live4">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="604018691512068" type="Live5">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="406684098330744" type="Live6">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="880482374109186" type="Live7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="673887574964113">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="881450709968064" type="System">
+                            <param id="0" name="Variable">Live</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="256993872431027" type="Live1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="572402254397330" type="Live2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="619089514030452" type="Live3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="877866885003702" type="Live4">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="861283734279396" type="Live5">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="870754897701989" type="Live6">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="352178120158246" type="Live7">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="314714036759655" title="SaveLoad2">
+            <sub-events>
+                <event-block sid="917629053637598">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="317312870899383" type="LocalStorage">
+                            <param id="0" name="Key">&quot;HiScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="481552934893784" type="LocalStorage">
+                            <param id="0" name="Key">&quot;HiScore&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="658508043856440">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="758446094714051" type="LocalStorage">
+                            <param id="0" name="Key">&quot;name&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="585610101534755" type="LocalStorage">
+                            <param id="0" name="Key">&quot;name&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="832765180622331">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="934150143686520" type="LocalStorage">
+                            <param id="0" name="Key">&quot;HiScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="276826075338601" type="System">
+                            <param id="0" name="Variable">RankingLocalScore</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="627070048148068">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="766417557995572" type="LocalStorage">
+                            <param id="0" name="Key">&quot;name&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="561017522775711" type="System">
+                            <param id="0" name="Variable">Name</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="126025523047345">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="851529981750461" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="637881549199106" type="Shark">
+                    <param id="0" name="Speed">Speed</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

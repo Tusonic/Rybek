@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!-- TUSONIC -->
+    <name>GameOver</name>
+    <events>
+        <variable constant="0" name="RankingLocalScore" sid="599114930423559" static="0" type="number">0</variable>
+        <event-block sid="245206100494722">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="354280680651810" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="587691421328364" type="Score">
+                    <param id="0" name="Text">Score</param>
+                </action>
+                <action id="0" name="Play" sid="407950390139946" type="Audio">
+                    <param id="0" name="Audio file">gameover</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="971338391364345">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="935221407524680" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">RankingLocalScore</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="421469038181980" type="System">
+                    <param id="0" name="Variable">RankingLocalScore</param>
+                    <param id="1" name="Value">Score</param>
+                </action>
+                <action id="0" name="Set item" sid="525061900921442" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HiScore&quot;</param>
+                    <param id="1" name="Value">RankingLocalScore</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="598733839966208">
+            <conditions>
+                <condition id="3" name="On touched object" sid="545869599003739" type="Touch">
+                    <param id="0" name="Object">Play</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="120103503940717" type="AJAX">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="URL">&quot;http://www.gry.rybnik.pl/ranking.php?name=&quot;&amp;Name&amp;&quot;&amp;score=&quot;&amp;Score&amp;&quot;&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="780590613907631" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="669748504736765" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="340506491647682" type="System">
+                    <param id="0" name="Layout">Play</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="284032585753856">
+            <conditions>
+                <condition id="3" name="On touched object" sid="754095162206045" type="Touch">
+                    <param id="0" name="Object">Retry</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="330545656363681" type="AJAX">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="URL">&quot;http://www.gry.rybnik.pl/ranking.php?name=&quot;&amp;Name&amp;&quot;&amp;score=&quot;&amp;Score&amp;&quot;&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="790767057755979" type="Audio">
+                    <param id="0" name="Audio file">clickmenu</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="270882451755676" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="855157600450879" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -10,7 +10,7 @@
             <actions>
                 <action id="0" name="Request URL" sid="548925161677956" type="AJAX">
                     <param id="0" name="Tag">&quot;GET&quot;</param>
-                    <param id="1" name="URL">&quot;https://www.gry.rybnik.pl/load.php&quot;</param>
+                    <param id="1" name="URL">&quot;http://www.gry.rybnik.pl/load.php&quot;</param>
                 </action>
                 <action id="5" name="Check item exists" sid="437114149611596" type="LocalStorage">
                     <param id="0" name="Key">&quot;HiScore&quot;</param>

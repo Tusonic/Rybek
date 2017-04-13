@@ -16,7 +16,7 @@ require_once 'classrybka.php';
 
 
 
-if (isset($_GET["wynik"]) || ($_GET["nazwa"])) {
+if (isset($_GET["name"]) || ($_GET["score"])) {
 
     $new_score = new Ranking();
     $new_score->DodajWynik();
@@ -35,8 +35,6 @@ else {
 
 
 };
-
-
 
 ?>
 
